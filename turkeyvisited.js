@@ -1,4 +1,5 @@
 const HOVER_COLOR = "#EFAE88";
+const SEL_COLOR = "#EFAE00";
 const MAP_COLOR = "#fff2e3";
 let cityCount = localStorage.getItem("selectedCities")
   ? JSON.parse(localStorage.getItem("selectedCities")).length
@@ -48,7 +49,7 @@ d3.json("tr-cities.json").then(function (data) {
       if (!d.noFill) {
         cityCount++;
         document.getElementById("city_count").innerHTML = cityCount;
-        d3.select(this).attr("fill", HOVER_COLOR);
+        d3.select(this).attr("fill", SEL_COLOR);
 
         //add selected city to localStorage
         if (localStorage.getItem("selectedCities")) {
